@@ -18,6 +18,10 @@ class Town(ChessPiece):
             try:
                 if self.board.positions[row + i][column] == 0:
                     self.availableMoves.append([row + i, column])
+                    if self.color == "White":
+                        self.board.whiteHits[Town].append(self.board.positions[row + i][column])
+                    else:
+                        self.board.blackHits[Town].append(self.board.positions[row + i][column])
                 elif self.board.positions[row + i][column].color == "White" and self.color == "Black":
                     self.availableMoves.append([row + i, column])
                     break
@@ -36,6 +40,10 @@ class Town(ChessPiece):
             try:
                 if self.board.positions[row - i][column] == 0:
                     self.availableMoves.append([row - i, column])
+                    if self.color == "White":
+                        self.board.whiteHits[Town].append(self.board.positions[row - i][column])
+                    else:
+                        self.board.blackHits[Town].append(self.board.positions[row - i][column])
                 elif self.board.positions[row - i][column].color == "White" and self.color == "Black":
                     self.availableMoves.append([row - i, column])
                     break
@@ -54,6 +62,10 @@ class Town(ChessPiece):
             try:
                 if self.board.positions[row][column + i] == 0:
                     self.availableMoves.append([row, column + i])
+                    if self.color == "White":
+                        self.board.whiteHits[Town].append(self.board.positions[row][column + i])
+                    else:
+                        self.board.blackHits[Town].append(self.board.positions[row][column + i])
                 elif self.board.positions[row][column + i].color == "White" and self.color == "Black":
                     self.availableMoves.append([row, column + i])
                     break
@@ -72,6 +84,10 @@ class Town(ChessPiece):
             try:
                 if self.board.positions[row][column - i] == 0:
                     self.availableMoves.append([row, column - i])
+                    if self.color == "White":
+                        self.board.whiteHits[Town].append(self.board.positions[row][column - i])
+                    else:
+                        self.board.blackHits[Town].append(self.board.positions[row][column - i])
                 elif self.board.positions[row][column - i].color == "White" and self.color == "Black":
                     self.availableMoves.append([row, column - i])
                     break

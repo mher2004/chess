@@ -30,11 +30,13 @@ class Pawn(ChessPiece):
         try:
             if self.color == "White" and self.board.positions[row - 1][column + 1].color == "Black":
                 self.availableMoves.append([row - 1, column + 1])
+                self.board.whiteHits[Pawn].append(self.board.positions[row - 1][column + 1])
         except:
             pass
         try:
             if self.color == "White" and self.board.positions[row - 1][column - 1].color == "Black":
                 self.availableMoves.append([row - 1, column - 1])
+                self.board.whiteHits[Pawn].append(self.board.positions[row - 1][column - 1])
         except:
             pass
         try:
@@ -46,12 +48,14 @@ class Pawn(ChessPiece):
             if self.board.positions[row + 1][column + 1] != 0 and self.color == "Black" and \
                     self.board.positions[row + 1][column + 1].color == "White":
                 self.availableMoves.append([row + 1, column + 1])
+                self.board.blackHits[Pawn].append(self.board.positions[row + 1][column + 1])
         except:
             pass
         try:
             if self.board.positions[row + 1][column - 1] != 0 and self.color == "Black" and \
                     self.board.positions[row + 1][column - 1].color == "White":
                 self.availableMoves.append([row + 1, column - 1])
+                self.board.blackHits[Pawn].append(self.board.positions[row + 1][column - 1])
         except:
             pass
 
