@@ -30,13 +30,23 @@ class Pawn(ChessPiece):
         try:
             if self.color == "White" and self.board.positions[row - 1][column + 1].color == "Black":
                 self.availableMoves.append([row - 1, column + 1])
-                self.board.whiteHits[Pawn].append(self.board.positions[row - 1][column + 1])
         except:
             pass
         try:
-            if self.color == "White" and self.board.positions[row - 1][column - 1].color == "Black":
+            if self.color == "White":
+                if not [row - 1, column + 1] in self.board.whiteHits[Pawn]:
+                    self.board.whiteHits[Pawn].append([row - 1,column + 1])
+        except:
+            pass
+        try:
+            if column!=0 and self.color == "White" and self.board.positions[row - 1][column - 1].color == "Black":
                 self.availableMoves.append([row - 1, column - 1])
-                self.board.whiteHits[Pawn].append(self.board.positions[row - 1][column - 1])
+        except:
+            pass
+        try:
+            if column!=0 and self.color == "White":
+                if not [row - 1, column - 1] in self.board.whiteHits[Pawn]:
+                    self.board.whiteHits[Pawn].append([row - 1,column - 1])
         except:
             pass
         try:
@@ -48,14 +58,25 @@ class Pawn(ChessPiece):
             if self.board.positions[row + 1][column + 1] != 0 and self.color == "Black" and \
                     self.board.positions[row + 1][column + 1].color == "White":
                 self.availableMoves.append([row + 1, column + 1])
-                self.board.blackHits[Pawn].append(self.board.positions[row + 1][column + 1])
         except:
             pass
         try:
-            if self.board.positions[row + 1][column - 1] != 0 and self.color == "Black" and \
+            if self.color == "Black":
+                if not [row + 1, column + 1] in self.board.blackHits[Pawn]:
+                    self.board.blackHits[Pawn].append([row + 1,column + 1])
+        except:
+            pass
+        try:
+            if column!=0 and self.board.positions[row + 1][column - 1] != 0 and self.color == "Black" and \
                     self.board.positions[row + 1][column - 1].color == "White":
                 self.availableMoves.append([row + 1, column - 1])
-                self.board.blackHits[Pawn].append(self.board.positions[row + 1][column - 1])
+        except:
+            pass
+        try:
+            print(self.board.positions[row + 1][column - 1])
+            if column!=0 and self.color == "Black":
+                if not [row + 1, column - 1] in self.board.blackHits[Pawn]:
+                    self.board.blackHits[Pawn].append([row + 1,column - 1])
         except:
             pass
 

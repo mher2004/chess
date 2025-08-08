@@ -13,7 +13,7 @@ class ChessPiece:
         if list(to_index(move)) in self.availableMoves:
             moveIndex = to_index(move)
             if self.board.positions[moveIndex[0]][moveIndex[1]] != 0:
-                slef.board.eated.append(self.board.positions[moveIndex[0]][moveIndex[1]])
+                self.board.eated.append(self.board.positions[moveIndex[0]][moveIndex[1]])
             self.board.positions[moveIndex[0]][moveIndex[1]] = self
             self.board.positions[to_index(self.position)[0]][to_index(self.position)[1]] = 0
             self.position = move

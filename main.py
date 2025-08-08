@@ -13,4 +13,6 @@ if __name__ == "__main__":
 
         board.make_move(piece, move)
         board.print_board()
+        print(board.whiteHits)
+        print(board.blackHits)
 

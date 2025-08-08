@@ -57,12 +57,31 @@ class Board:
             Queen: [],
             King: []
         }
-        # for a in self.positions:
-        #     for b in a:
-        #         if b != 0:
-        #             b.checkMoves()
+
+    def updateHits(self):
+        self.blackHits = {
+            Pawn: [],
+            Horse: [],
+            Bishop: [],
+            Town: [],
+            Queen: [],
+            King: []
+        }
+        self.whiteHits = {
+            Pawn: [],
+            Horse: [],
+            Bishop: [],
+            Town: [],
+            Queen: [],
+            King: []
+        }
+        for a in self.positions:
+            for b in a:
+                if b != 0:
+                    b.checkMoves()
 
     def make_move(self, piece, move):
+        self.updateHits()
         if to_index(piece) == False or to_index(move) == False:
             return False
         pieceRow, pieceColumn = to_index(piece)
@@ -75,6 +94,7 @@ class Board:
             return False
         else:
             self.positions[pieceRow][pieceColumn].movePiece(move)
+            self.updateHits()
 
     def print_board(self):
         k = 8
