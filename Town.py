@@ -28,6 +28,12 @@ class Town(ChessPiece):
                 elif self.board.positions[row + i][column].color == "Black" and self.color == "White":
                     self.availableMoves.append([row + i, column])
                     break
+                elif self.board.positions[row + i][column].color == "White" and self.color == "White":
+                    self.board.whiteHits[Town].append([row + i, column])
+                    break
+                elif self.board.positions[row + i][column].color == "Black" and self.color == "Black":
+                    self.board.blackHits[Town].append([row + i, column])
+                    break
                 else:
                     break
             except:
@@ -49,6 +55,12 @@ class Town(ChessPiece):
                     break
                 elif self.board.positions[row - i][column].color == "Black" and self.color == "White":
                     self.availableMoves.append([row - i, column])
+                    break
+                elif self.board.positions[row - i][column].color == "White" and self.color == "White":
+                    self.board.whiteHits[Town].append([row - i, column])
+                    break
+                elif self.board.positions[row - i][column].color == "Black" and self.color == "Black":
+                    self.board.blackHits[Town].append([row - i, column])
                     break
                 else:
                     break
@@ -72,6 +84,12 @@ class Town(ChessPiece):
                 elif self.board.positions[row][column + i].color == "Black" and self.color == "White":
                     self.availableMoves.append([row, column + i])
                     break
+                elif self.board.positions[row][column + i].color == "White" and self.color == "White":
+                    self.board.whiteHits[Town].append([row, column + i])
+                    break
+                elif self.board.positions[row][column + i].color == "Black" and self.color == "Black":
+                    self.board.blackHits[Town].append([row, column + i])
+                    break
                 else:
                     break
             except:
@@ -93,6 +111,12 @@ class Town(ChessPiece):
                     break
                 elif self.board.positions[row][column - i].color == "Black" and self.color == "White":
                     self.availableMoves.append([row, column - i])
+                    break
+                elif self.board.positions[row][column - i].color == "White" and self.color == "White":
+                    self.board.whiteHits[Town].append([row, column - i])
+                    break
+                elif self.board.positions[row][column - i].color == "Black" and self.color == "Black":
+                    self.board.blackHits[Town].append([row, column - i])
                     break
                 else:
                     break
