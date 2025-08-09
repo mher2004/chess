@@ -23,9 +23,9 @@ class Horse(ChessPiece):
                 if self.board.positions[row + checkMove[0]][column + checkMove[1]] == 0:
                     self.availableMoves.append([row + checkMove[0], column + checkMove[1]])
                     if self.color == "White":
-                        self.board.whiteHits[Horse].append(self.board.positions[row + checkMove[0]][column + checkMove[1]])
+                        self.board.whiteHits[Horse].append([row + checkMove[0], column + checkMove[1]])
                     else:
-                        self.board.blackHits[Horse].append(self.board.positions[row + checkMove[0]][column + checkMove[1]])
+                        self.board.blackHits[Horse].append([row + checkMove[0], column + checkMove[1]])
                 elif self.color == "White" and self.board.positions[row + checkMove[0]][
                     column + checkMove[1]].color == "Black":
                     self.availableMoves.append([row + checkMove[0], column + checkMove[1]])

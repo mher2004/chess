@@ -1,5 +1,5 @@
 from Board import Board
-
+from Func import to_position
 
 
 if __name__ == "__main__":
@@ -13,6 +13,12 @@ if __name__ == "__main__":
 
         board.make_move(piece, move)
         board.print_board()
-        print(board.whiteHits)
-        print(board.blackHits)
+        for a in board.whiteHits.keys():
+            print(f"\nWhite {a.__name__} hits:")
+            for b in board.whiteHits[a]:
+                print(f"{to_position(b)}", end=", ")
+        for a in board.blackHits.keys():
+            print(f"\nBlack {a.__name__} hits:")
+            for b in board.blackHits[a]:
+                print(f"{to_position(b)}", end=", ")
 

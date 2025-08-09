@@ -33,7 +33,7 @@ class Pawn(ChessPiece):
         except:
             pass
         try:
-            if self.color == "White":
+            if column!=7 and self.color == "White":
                 if not [row - 1, column + 1] in self.board.whiteHits[Pawn]:
                     self.board.whiteHits[Pawn].append([row - 1,column + 1])
         except:
@@ -61,7 +61,7 @@ class Pawn(ChessPiece):
         except:
             pass
         try:
-            if self.color == "Black":
+            if column!=7 and self.color == "Black":
                 if not [row + 1, column + 1] in self.board.blackHits[Pawn]:
                     self.board.blackHits[Pawn].append([row + 1,column + 1])
         except:
@@ -73,7 +73,7 @@ class Pawn(ChessPiece):
         except:
             pass
         try:
-            print(self.board.positions[row + 1][column - 1])
+            # print(self.board.positions[row + 1][column - 1])
             if column!=0 and self.color == "Black":
                 if not [row + 1, column - 1] in self.board.blackHits[Pawn]:
                     self.board.blackHits[Pawn].append([row + 1,column - 1])

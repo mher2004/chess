@@ -19,9 +19,9 @@ class Queen(ChessPiece):
                 if self.board.positions[row + i][column + i] == 0:
                     self.availableMoves.append([row + i, column + i])
                     if self.color == "White":
-                        self.board.whiteHits[Queen].append(self.board.positions[row + i][column + i])
+                        self.board.whiteHits[Queen].append([row + icolumn + i])
                     else:
-                        self.board.blackHits[Queen].append(self.board.positions[row + i][column + i])
+                        self.board.blackHits[Queen].append([row + icolumn + i])
                 elif self.board.positions[row + i][column].color == "White" and self.color == "Black":
                     self.availableMoves.append([row + i, column + i])
 
@@ -42,9 +42,9 @@ class Queen(ChessPiece):
                 if self.board.positions[row - i][column - i] == 0:
                     self.availableMoves.append([row - i, column - i])
                     if self.color == "White":
-                        self.board.whiteHits[Queen].append(self.board.positions[row - i][column - i])
+                        self.board.whiteHits[Queen].append([row - icolumn - i])
                     else:
-                        self.board.blackHits[Queen].append(self.board.positions[row - i][column - i])
+                        self.board.blackHits[Queen].append([row - icolumn - i])
                 elif self.board.positions[row - i][column - i].color == "White" and self.color == "Black":
                     self.availableMoves.append([row - i, column - i])
                     break
@@ -64,9 +64,9 @@ class Queen(ChessPiece):
                 if self.board.positions[row - i][column + i] == 0:
                     self.availableMoves.append([row - i, column + i])
                     if self.color == "White":
-                        self.board.whiteHits[Queen].append(self.board.positions[row - i][column + i])
+                        self.board.whiteHits[Queen].append([row - icolumn + i])
                     else:
-                        self.board.blackHits[Queen].append(self.board.positions[row - i][column + i])
+                        self.board.blackHits[Queen].append([row - icolumn + i])
                 elif self.board.positions[row - i][column + i].color == "White" and self.color == "Black":
                     self.availableMoves.append([row - i, column + i])
                     break
@@ -86,9 +86,9 @@ class Queen(ChessPiece):
                 if self.board.positions[row + i][column - i] == 0:
                     self.availableMoves.append([row + i, column - i])
                     if self.color == "White":
-                        self.board.whiteHits[Queen].append(self.board.positions[row + i][column - i])
+                        self.board.whiteHits[Queen].append([row + icolumn - i])
                     else:
-                        self.board.blackHits[Queen].append(self.board.positions[row + i][column - i])
+                        self.board.blackHits[Queen].append([row + icolumn - i])
                 elif self.board.positions[row + i][column - i].color == "White" and self.color == "Black":
                     self.availableMoves.append([row + i, column - i])
                     break
@@ -109,9 +109,9 @@ class Queen(ChessPiece):
                 if self.board.positions[row + i][column] == 0:
                     self.availableMoves.append([row + i, column])
                     if self.color == "White":
-                        self.board.whiteHits[Queen].append(self.board.positions[row + i][column])
+                        self.board.whiteHits[Queen].append([row + icolumn])
                     else:
-                        self.board.blackHits[Queen].append(self.board.positions[row + i][column])   
+                        self.board.blackHits[Queen].append([row + icolumn])   
                 elif self.board.positions[row + i][column].color == "White" and self.color == "Black":
                     self.availableMoves.append([row + i, column])
                     break
@@ -131,9 +131,9 @@ class Queen(ChessPiece):
                 if self.board.positions[row - i][column] == 0:
                     self.availableMoves.append([row - i, column])
                     if self.color == "White":
-                        self.board.whiteHits[Queen].append(self.board.positions[row - i][column])
+                        self.board.whiteHits[Queen].append([row - icolumn])
                     else:
-                        self.board.blackHits[Queen].append(self.board.positions[row - i][column])   
+                        self.board.blackHits[Queen].append([row - icolumn])   
                 elif self.board.positions[row - i][column].color == "White" and self.color == "Black":
                     self.availableMoves.append([row - i, column])
                     break
@@ -153,9 +153,9 @@ class Queen(ChessPiece):
                 if self.board.positions[row][column + i] == 0:
                     self.availableMoves.append([row, column + i])
                     if self.color == "White":
-                        self.board.whiteHits[Queen].append(self.board.positions[row][column + i])
+                        self.board.whiteHits[Queen].append([rowcolumn + i])
                     else:
-                        self.board.blackHits[Queen].append(self.board.positions[row][column + i])   
+                        self.board.blackHits[Queen].append([rowcolumn + i])   
                 elif self.board.positions[row][column + i].color == "White" and self.color == "Black":
                     self.availableMoves.append([row, column + i])
                     break
@@ -175,9 +175,9 @@ class Queen(ChessPiece):
                 if self.board.positions[row][column - i] == 0:
                     self.availableMoves.append([row, column - i])
                     if self.color == "White":
-                        self.board.whiteHits[Queen].append(self.board.positions[row][column - i])
+                        self.board.whiteHits[Queen].append(self.board.positions[rowcolumn - i])
                     else:
-                        self.board.blackHits[Queen].append(self.board.positions[row][column - i])
+                        self.board.blackHits[Queen].append(self.board.positions[rowcolumn - i])
                 elif self.board.positions[row][column - i].color == "White" and self.color == "Black":
                     self.availableMoves.append([row, column - i])
                     break
