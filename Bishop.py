@@ -28,9 +28,8 @@ class Bishop(ChessPiece):
                 elif self.board.positions[row + i][column + i].color == "Black" and self.color == "White":
                     self.availableMoves.append([row + i, column + i])
                     break
-                        self.board.blackHits[Bishop].append([row + i, column + i])
-                elif self.board.positions[row + i][column].color == "White" and self.color == "White":
-                        self.board.whiteHits[Bishop].append([row + i, column + i])
+                elif self.board.positions[row + i][column + i].color == "White" and self.color == "White":
+                    self.board.whiteHits[Bishop].append([row + i, column + i])
                     break
                 elif self.board.positions[row + i][column + i].color == "Black" and self.color == "Black":
                     self.board.blackHits[Bishop].append([row + i, column + i])
@@ -57,6 +56,12 @@ class Bishop(ChessPiece):
                 elif self.board.positions[row - i][column - i].color == "Black" and self.color == "White":
                     self.availableMoves.append([row - i, column - i])
                     break
+                elif self.board.positions[row - i][column - i].color == "White" and self.color == "White":
+                    self.board.whiteHits[Bishop].append([row - i, column - i])
+                    break
+                elif self.board.positions[row - i][column - i].color == "Black" and self.color == "Black":
+                    self.board.blackHits[Bishop].append([row - i, column - i])
+                    break
                 else:
                     break
             except:
@@ -79,6 +84,12 @@ class Bishop(ChessPiece):
                 elif self.board.positions[row - i][column + i].color == "Black" and self.color == "White":
                     self.availableMoves.append([row - i, column + i])
                     break
+                elif self.board.positions[row - i][column + i].color == "White" and self.color == "White":
+                    self.board.whiteHits[Bishop].append([row - i, column + i])
+                    break
+                elif self.board.positions[row - i][column + i].color == "Black" and self.color == "Black":
+                    self.board.blackHits[Bishop].append([row - i, column + i])
+                    break
                 else:
                     break
             except:
@@ -100,6 +111,12 @@ class Bishop(ChessPiece):
                     break
                 elif self.board.positions[row + i][column - i].color == "Black" and self.color == "White":
                     self.availableMoves.append([row + i, column - i])
+                    break
+                elif self.board.positions[row + i][column - i].color == "White" and self.color == "White":
+                    self.board.whiteHits[Bishop].append([row + i, column - i])
+                    break
+                elif self.board.positions[row + i][column - i].color == "Black" and self.color == "Black":
+                    self.board.blackHits[Bishop].append([row + i, column - i])
                     break
                 else:
                     break
